@@ -8,52 +8,62 @@ a{
     text-decoration: none;
 }
  /* ______________header_____________ */
+
+.menu{
+    display: none;
+}
 .header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items:center;
-    margin: 10px 70px 10px 70px;
-}
-.header>:nth-child(1)>img{
-    width: 40px;
-    height: 40px;
-}
-.header>:nth-child(1){
-    display: flex;
-    align-items: center;
-    width: 221px;
-    height: 40px;
-    gap: 8px;
+    width: 100%;
+    border: 2px solid black;
+    flex-wrap: wrap;
 }
 
+.header::before,
+.header::after{
+    content: "";
+    width: 100%;
+    height: 20px;
+}
+
+.header>:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .header>:nth-child(2)>ul{
     list-style: none;
     display: flex;
-    gap:40px;
+    gap:30px;
 }
 .header>:nth-child(2)>ul>li>a{
     color: black;
+    transition: 0.3s;
 }
 #exprss{
     color: #0866C2;
 }
-
+.header>:nth-child(3)>{
+    margin: auto;
+}
 .header>:nth-child(3)>button{
     border: none;
     background-color: #FF6418;
-    width: 171px;
-    height: 44px;
     border-radius: 10px;
+    width: max-content;
     padding: 8px;
+    display: flex;
 }
 .header>:nth-child(3)>button>a{
     color: white;
+    flex-shrink: 0;
 }
 .header>:nth-child(2)>ul>li>a:hover{
     color: #0866C2;
     border-bottom: 2px solid #0866C2;
     padding-bottom: 4px;
-    transition: 0.3s;
 }
 /* _________________________________ */
 
@@ -64,7 +74,11 @@ a{
 .firstDiv{
     display: flex;
     justify-content: space-around;
-    padding: 64px 54px 48px 40px;
+    gap: 20px;
+    /* flex-wrap: wrap; */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .firstDiv>:nth-child(1){
@@ -79,7 +93,7 @@ a{
 .firstDiv>:nth-child(1)>:nth-child(2){
     color: #102A43;
     font-size: 56px;
-    width: 450px;
+    width: 100%;
 }
 .firstDiv>:nth-child(1)>:nth-child(3){
     font-size: 17px;
@@ -111,12 +125,14 @@ a{
     color: #102A43;
 }
 
+.firstDiv>:nth-child(2){
+    width: 100%; 
+}
 .firstDiv>:nth-child(2)>img{
-    width: 588px;
-    height: 450px;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
 }
-
 .secondDiv{
     display: flex;
     justify-content: space-around;
@@ -143,7 +159,7 @@ a{
     background-color: #FFFFFF;
 }
 .firstDicSecndSec{
-    width: 700px;
+    width: 50%;
     margin: 0 auto;
     text-align: center;
 }
@@ -160,22 +176,21 @@ a{
     font-size: 16px;
 }
 
-
-
 .cards{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(12,1fr);
     gap: 40px;
-    margin: 30px 50px 30px 50px;
     height: 400px;
+    margin: 20px;
 }
-.cards>.card>img{
+.card>img{
     width: 100%;
     border-radius: 8px;
 }
 .card{
     border: 1px solid #DCE5EC;
     border-radius: 8px;
+    grid-column: span 4;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -226,26 +241,28 @@ a{
     color: #0866C2;
     padding-left: 8px;
 }
-/* _________________________________ */
+/* ___________________________________________*/
 
 /* ______________Third Section________________*/
 
 .thridSec{
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
     padding: 20px 50px;
     background-color: #F3F7FA;
-    overflow: auto;
+}
+.firstDivThirdSec{
+    width: 40%;
+    border-radius: 24px;
 }
 .firstDivThirdSec>img{
-    width: 430px;
-    height: 354px;
+    width: 100%;
+    height: 100%;
     border-radius: 24px;
 }
 .secondDivThridSec{
-    height: 362px;
-    width: 648px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -283,9 +300,11 @@ footer{
     background-color:#102A43 ;
     padding: 64px 104px 20px 104px;
 }
+
+
 .firstDivFooter{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, 200px);
     gap: 40px;
     margin-bottom: 25px;
 }
@@ -349,4 +368,52 @@ footer{
     padding-top: 20px;
 }
 
+@media(max-width: 375px){
+    .header>:nth-child(2)>:nth-child(1){
+        display: none;
+    }
+    .menu{
+        display: flex;
+    }
+    .header{
+        flex-wrap: wrap;
+    }
+    .header>:nth-child(1){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+    }
+    .header>:nth-child(3){
+        width: 100%;
+        margin: 8px 10px 8px 10px;
+    }
+    .header>:nth-child(3)>button{
+        width: 100%;
+    }
 
+    .firstDiv{
+        flex-wrap: wrap;
+    }
+
+    .secondDiv{
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    footer{
+        padding: 10px;
+    }
+    .cards{
+        grid-template-columns: 1fr;
+    }
+
+    .thridSec{
+        flex-wrap: wrap;
+    }
+
+    .firstDivThirdSec{
+        width: 100%;
+    }
+}
