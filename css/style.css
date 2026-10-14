@@ -74,7 +74,6 @@ a{
     display: flex;
     justify-content: space-around;
     gap: 20px;
-    /* flex-wrap: wrap; */
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -91,7 +90,7 @@ a{
 }
 .firstDiv>:nth-child(1)>:nth-child(2){
     color: #102A43;
-    font-size: 56px;
+    font-size: 270%;
     width: 100%;
 }
 .firstDiv>:nth-child(1)>:nth-child(3){
@@ -158,8 +157,6 @@ a{
     background-color: #FFFFFF;
 }
 .firstDicSecndSec{
-    width: 50%;
-    margin: 0 auto;
     text-align: center;
 }
 .firstDicSecndSec>:nth-child(1){
@@ -363,7 +360,7 @@ footer{
     padding-top: 20px;
 }
 
-@media(max-width: 375px){
+@media(max-width: 400px){
     .header>:nth-child(2)>:nth-child(1){
         display: none;
     }
@@ -418,11 +415,41 @@ footer{
 
     .cardsThridSec{
         display: grid;
-        grid-template-columns: repeat(auto-fit,100px);
+        grid-template-columns: repeat(auto-fit,200px);
     }
 
+    .secondDivThridSec{
+        display: contents;
+    }
 
-    /* .secondDivThridSec{
+    .secondDivThridSec>p{
         order: -1;
-    } */
+    }
+    .secondDivThridSec>:nth-child(2){
+        font-size: 32px;
+    }
+
+    .firstDicSecndSec>:nth-child(2){
+        font-size: 19px;
+    }
+    .firstDicSecndSec{
+        text-align: start;
+    }
+    
+    .btnFirstSec{
+        display: block;
+    }
+    
+    .btn1, .btn2{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .cardsThridSec{
+        width: 100%;
+    }
+
+    .secondDivFooter{
+        display: block;
+    }
 }
