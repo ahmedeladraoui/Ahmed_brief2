@@ -352,6 +352,10 @@ footer{
     padding-top: 20px;
 }
 
+footer a{
+    color: #C2D0DD
+}
+
 @media(max-width: 500px){
     .header>:nth-child(2)>:nth-child(1){
         display: none;
